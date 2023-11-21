@@ -1,0 +1,127 @@
+:root{
+    --default: #999999;
+    --primary: #77675f;
+    --info:#292c34;
+    --success:#599955;
+    --warning:#d6891d;
+    --danger:#f44336;
+    --primary-bg: #E7E4CF;
+    --secondary-bg: #8A8E9D;
+    --dark-bg:#999F7E;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: var(--primary-bg);
+    color: var(--info);
+}
+
+.btn-primary-base{
+    border-radius: 4px;
+    background: var(--default);
+    color: #ffffff;
+    padding: 12px 20px;
+    outline-offset: none;
+}
+.btn-danger-base{
+    border-radius: 4px;
+    background: var(--danger);
+    color: #ffffff;
+    padding: 12px 20px;
+    outline-offset: none; 
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(20, 30px);
+    grid-gap: 0px;
+    margin: 20px auto;
+}
+
+.grid-cell {
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-bg);
+    cursor: pointer;
+}
+
+/* .start-cell, .end-cell {
+    background-color: var(--success);
+    border: 0.5px solid var(--success) !important;
+} */
+
+.start-cell {
+    background-image: url(../images/home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.end-cell {
+    background-image: url(../images/destination.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.obstacle-cell {
+    background-color: var(--info);
+    border: 0.5px solid var(--info) !important;
+}
+
+.shortest-path-cell {
+    background-color: var(--secondary-bg);
+    border: 0.5px solid var(--secondary-bg) !important;
+}
+
+@media(max-width:768px){
+    #grid-container {
+        grid-template-columns: repeat(20, 15px);
+        margin: 10px auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    } 
+
+    .grid-cell {
+        width: 15px;
+        height: 15px;
+    }
+
+    .btn-danger-base, .btn-primary-base {
+        padding: 6px 10px;
+    }
+}
+
+.bike {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes bikeAnimation {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.bike.animate {
+    animation: bikeAnimation 0.6s ease-in-out infinite;
+}
+
