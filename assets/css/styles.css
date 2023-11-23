@@ -10,12 +10,45 @@
     --dark-bg:#999F7E;
 }
 
+/* customize scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border: 1px solid var(--default);
+    border-radius: 100px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--default);
+    ;
+    border-radius: 100px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--default);
+    ;
+  }
+
 
 body {
     font-family: Arial, sans-serif;
+    background-color: var(--info);
+}
+a{
+    text-decoration: none;
+}
+
+.path-finding-container{
     text-align: center;
     background: var(--primary-bg);
     color: var(--info);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 120%, 0 90%);
 }
 
 .btn-primary-base{
